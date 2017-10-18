@@ -1,0 +1,6 @@
+drivers/tty/tty_io.c: tty_write
+drivers/tty/n_tty.c: n_tty_write
+drivers/tty/tty_ioctl.c: tty_write_room
+drivers/tty/n_tty.c: do_output_char
+
+

@@ -1,0 +1,24 @@
+This is the azkaban project to provide memory isolation for containers.
+
+To run this project,
+
+1. Create a VM disk.
+	./create_kvm_disk.sh
+2. Compile the preload library.
+	cd azkaban_preload_library
+	make
+3. Compile the test cases in linux-4.1.6/azkaban/test.
+	cd linux-4.1.6/azkaban/test
+	make
+4. Mount the VM disk.
+	./mount_kvm_disk.sh
+5. Copy the test cases to the disk.
+	cp hello /home/oscar/
+	exit
+6. Compile the linux kernel.
+	cd linux-4.1.6
+	cp config_20170223 .config
+	make menuconfig
+	make
+7. Run the VM.
+	./run-qemu.sh

@@ -1,0 +1,3 @@
+Use "--whole-archive" option for to force include this library.
+Example:
+	gcc -L. -Wl,--whole-archive -lazk_premain -Wl,--no-whole-archive -o hello hello.c

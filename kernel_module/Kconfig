@@ -1,0 +1,50 @@
+menuconfig AZKABAN
+        bool "Azkaban support (EXPERIMENTAL)"
+        depends on MMU_NOTIFIER
+        depends on KVM_INTEL
+        default n
+
+if AZKABAN
+
+config AZKABAN_NS
+        bool "Azkaban namespaces"
+        default n
+
+if AZKABAN_NS
+
+config AZKABAN_PID_NS
+        bool "PID namespaces"
+        depends on PID_NS
+        default n
+
+config AZKABAN_MNT_NS
+        bool "Mount namespaces"
+        default n
+
+config AZKABAN_IPC_NS
+        bool "IPC namespaces"
+        depends on IPC_NS
+        default n
+
+config AZKABAN_UTS_NS
+        bool "UTS namespaces"
+        depends on UTS_NS
+        default n
+
+config AZKABAN_NET_NS
+        bool "Network namespaces"
+        depends on NET_NS
+        default n
+
+endif
+
+config AZKABAN_DEBUG
+        bool "Debug Azkaban support"
+        default n
+
+config AZKABAN_PRINTK
+	bool "Redirect printk in Azkaban to host"
+	default n
+
+endif
+
